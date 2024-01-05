@@ -1,0 +1,29 @@
+.header {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fef2f2;
+}
+
+.header-nav {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  background-color: #fef3c7;
+  font-size: 25px;
+}
+
+.header button {
+  color: white;
+  background-color: #eab308;
+  border-radius: 100px;
+  height: 45px;
+  width: auto;
+}
+
+.header button:hover {
+  background-color: #a16207;
+}

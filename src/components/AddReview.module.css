@@ -1,0 +1,41 @@
+.review-form {
+  background-color: #fed7aa;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-bottom: 15px;
+}
+
+.description {
+  height: 225px;
+  width: 550px;
+  align-items: center;
+  text-align: start;
+  border: none;
+  border-radius: 25px;
+  font-size: 22px;
+  margin: 25px;
+  padding: 15px;
+}
+/* .date-input {
+  height: 55px;
+  width: 550px;
+  align-items: start;
+  text-align: start;
+  border: none;
+  border-radius: 100px;
+  font-size: 22px;
+  margin: 15px;
+} */
+
+.add-btn {
+  color: white;
+  background-color: #eab308;
+  border-radius: 100px;
+  height: 55px;
+  width: 155px;
+}
+.add-btn:hover {
+  background-color: #a16207;
+}

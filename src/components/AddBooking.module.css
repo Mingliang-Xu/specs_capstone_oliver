@@ -1,0 +1,31 @@
+.booking-form {
+  background-color: #fed7aa;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100px;
+}
+
+.booking-form input,
+.booking-form select {
+  height: 55px;
+  width: 220px;
+  align-items: center;
+  text-align: start;
+  padding: 15px;
+  border: none;
+  border-radius: 100px;
+  font-size: 22px;
+}
+
+.add-btn {
+  color: white;
+  background-color: #eab308;
+  border-radius: 100px;
+  height: 55px;
+  width: 155px;
+}
+.add-btn:hover {
+  background-color: #a16207;
+}
