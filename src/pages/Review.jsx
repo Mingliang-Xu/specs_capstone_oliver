@@ -26,7 +26,7 @@ const Review = () => {
   };
 
   return (
-    <main>
+    <main className={classes.layout}>
       {state.userId && <AddReview fetchAllReviews={fetchAllReviews} />}
       <div className={classes["review-container"]}>
         {state.userId &&

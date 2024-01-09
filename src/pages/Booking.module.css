@@ -1,4 +1,23 @@
+.layout {
+  display: grid;
+  grid-template-columns: 500px 1fr;
+  gap: 20px;
+}
+
 .booking-container {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 800px) {
+  .layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  .booking-container {
+    flex-direction: column;
+  }
 }

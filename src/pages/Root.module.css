@@ -1,4 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
+  background-color: #292524;
+  transition: 0.5s ease;
+  color: #fafaf9;
 }

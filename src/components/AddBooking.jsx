@@ -81,7 +81,7 @@ const AddBooking = ({ fetchAllBookings }) => {
           required
         />
         <button className={classes["add-btn"]} type="submit">
-          Add
+          Book Now
         </button>
       </form>
     </>

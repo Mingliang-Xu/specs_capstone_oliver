@@ -30,13 +30,15 @@ const BookingItem = ({ booking, fetchAllBookings }) => {
       .catch((err) => console.log(err));
   };
   const handleDelete = () => {
-    axios
-      .delete(`/api/booking/${booking.id}`)
-      .then((res) => {
-        console.log(res);
-        fetchAllBookings();
-      })
-      .catch((err) => console.log(err));
+    const confirmed = window.confirm("Are you sure?");
+    confirmed &&
+      axios
+        .delete(`/api/booking/${booking.id}`)
+        .then((res) => {
+          console.log(res);
+          fetchAllBookings();
+        })
+        .catch((err) => console.log(err));
   };
   // console.log(bookingDate, new Date(booking.bookingDate));
 
@@ -98,7 +100,7 @@ const BookingItem = ({ booking, fetchAllBookings }) => {
               Cancel
             </button>
             <NavLink to={`/checkout/${booking.id}`}>
-              <button>Pay</button>
+              <button>Pay Now</button>
             </NavLink>
           </span>
           <h2>{booking.bookingTime === "10:00:00" ? "10 AM" : "3 PM"}</h2>

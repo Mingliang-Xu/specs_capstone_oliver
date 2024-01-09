@@ -1,5 +1,6 @@
 const { Review } = require("../models/review");
 
+const { User } = require("../models/user");
 module.exports = {
   addReview: async (req, res) => {
     try {
@@ -22,7 +23,10 @@ module.exports = {
   getAllReviews: async (req, res) => {
     try {
       const { userId } = req.params;
-      const allReviews = await Review.findAll({ where: { userId: userId } })
+      const allReviews = await Review.findAll({
+        where: { userId: userId },
+        order: [["id", "DESC"]],
+      })
         .then((result) => result)
         .catch((err) => console.log(err));
       res.status(200).send(allReviews);
@@ -60,7 +64,16 @@ module.exports = {
   getPublishedReviews: async (req, res) => {
     try {
       const PublishedReviews = await Review.findAll({
-        where: { publish: true },
+        where: {
+          publish: true,
+        },
+        include: {
+          model: User,
+          // through: {
+          //   attributes: ["userId"],
+          // },
+        },
+        order: [["id", "DESC"]],
       })
         .then((result) => result)
         .catch((err) => console.log(err));

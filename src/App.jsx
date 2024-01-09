@@ -28,13 +28,14 @@ function App() {
     {
       path: "/",
       element: <Root />,
+      // loader: viewAllPublishedReviews,
       children: [
-        { index: "/home", element: <Home />, loader: viewAllPublishedReviews },
-        { path: "/bookings", element: <Booking />, loader: viewAllBookings },
-        { path: "/reviews", element: <Review />, loader: viewAllReviews },
-        { path: "/bookings/:id", element: <BookingItem /> },
-        { path: "/checkout/:bookingId", element: state.userId && <Checkout /> },
-        { path: "/reviews/:id", element: <ReviewItem /> },
+        { index: true, element: <Home />, loader: viewAllPublishedReviews },
+        { path: "bookings", element: <Booking />, loader: viewAllBookings },
+        { path: "reviews", element: <Review />, loader: viewAllReviews },
+        { path: "bookings/:id", element: <BookingItem /> },
+        { path: "checkout/:bookingId", element: state.userId && <Checkout /> },
+        { path: "reviews/:id", element: <ReviewItem /> },
       ],
     },
   ]);

@@ -58,7 +58,14 @@ const Checkout = (props) => {
         <h2>Price per Person:$75</h2>
         <h2>Your Total Order Amount Is: ${total * 75}</h2>
         <span>
-          <button onClick={() => navigate(`/bookings`)}>Cancel</button>
+          <button
+            onClick={() => {
+              const confirmed = window.confirm("Are you sure?");
+              confirmed && navigate("/bookings");
+            }}
+          >
+            Cancel
+          </button>
           <button onClick={() => handleStripe()}>Continue</button>
         </span>
       </div>

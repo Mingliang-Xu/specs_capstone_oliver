@@ -29,7 +29,7 @@ const Booking = () => {
   };
 
   return (
-    <main className={classes.main}>
+    <main className={classes.layout}>
       {state.userId && <AddBooking fetchAllBookings={fetchAllBookings} />}
       <div className={classes["booking-container"]}>
         {state.userId &&

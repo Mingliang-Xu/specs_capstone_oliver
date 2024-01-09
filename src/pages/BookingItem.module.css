@@ -3,9 +3,9 @@
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color: #fed7aa;
+  background-color: #78716c;
   height: 325px;
-  width: 225px;
+  width: 255px;
   border: none;
   border-radius: 18px;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
@@ -13,9 +13,14 @@
   margin: 10px;
   text-align: center;
   padding: 10px;
+  transition: 0.5s ease;
+}
+.booking-card:hover {
+  transform: scale(1.1);
 }
 .booking-card input,
 select {
+  background-color: #a8a29e;
   height: inherit;
   justify-content: space-evenly;
   align-items: center;
@@ -32,15 +37,18 @@ select {
   width: 100%;
 }
 .booking-card button {
-  color: white;
-  background-color: #eab308;
+  color: #fafaf9;
+  background-color: #ca8a04;
   border-radius: 100px;
   height: 45px;
   width: 155px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: 0.5s ease;
 }
 
 .booking-card button:hover {
-  background-color: #a16207;
+  background-color: #854d0e;
 }
 .booking-card span button {
   width: auto;

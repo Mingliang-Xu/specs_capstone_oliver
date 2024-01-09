@@ -1,15 +1,22 @@
 .review-form {
-  background-color: #fed7aa;
+  height: 50vh;
+  background-color: #78716c;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
   padding-bottom: 15px;
+  margin-left: 30px;
+  border-radius: 35px;
+  transition: 0.5s;
+}
+.review-form:hover {
+  transform: scale(1.03);
 }
 
 .description {
-  height: 225px;
-  width: 550px;
+  height: 325px;
+  width: 90%;
   align-items: center;
   text-align: start;
   border: none;
@@ -17,25 +24,29 @@
   font-size: 22px;
   margin: 25px;
   padding: 15px;
+  background-color: #a8a29e;
 }
-/* .date-input {
-  height: 55px;
-  width: 550px;
-  align-items: start;
-  text-align: start;
-  border: none;
-  border-radius: 100px;
-  font-size: 22px;
-  margin: 15px;
-} */
 
 .add-btn {
-  color: white;
-  background-color: #eab308;
+  color: #fafaf9;
+  background-color: #ca8a04;
   border-radius: 100px;
   height: 55px;
   width: 155px;
+  transition: 0.5s ease;
 }
 .add-btn:hover {
-  background-color: #a16207;
+  background-color: #854d0e;
+  transform: scale(1.1);
+}
+
+@media (max-width: 800px) {
+  .review-form {
+    height: 100%;
+    width: 90%;
+  }
+  .description,
+  .add-btn {
+    width: 80%;
+  }
 }

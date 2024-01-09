@@ -27,13 +27,15 @@ const ReviewItem = ({ review, fetchAllReviews }) => {
   };
 
   const handleDelete = () => {
-    axios
-      .delete(`/api/review/${review.id}`)
-      .then((res) => {
-        console.log(res);
-        fetchAllReviews();
-      })
-      .catch((err) => console.log(err));
+    const confirmed = window.confirm("Are you sure?");
+    confirmed &&
+      axios
+        .delete(`/api/review/${review.id}`)
+        .then((res) => {
+          console.log(res);
+          fetchAllReviews();
+        })
+        .catch((err) => console.log(err));
   };
 
   const officialDate = Date.parse(review.createdAt);
@@ -62,14 +64,9 @@ const ReviewItem = ({ review, fetchAllReviews }) => {
       {isEditing ? (
         <div className={classes["review-card"]}>
           <form onSubmit={(e) => handleChanges(e)}>
-            {/* <input
-              type="date"
-              value={reviewDate.slice(0, 10)}
-              min={new Date().toISOString().split("T")[0]}
-              onChange={(e) => setReviewDate(e.target.value)}
-            /> */}
-            <input
-              type="text"
+            <textarea
+              rows={10}
+              cols={25}
               placeholder="enter your description"
               value={description}
               onChange={(e) => setDescription(e.target.value)}
@@ -98,8 +95,8 @@ const ReviewItem = ({ review, fetchAllReviews }) => {
             <button onClick={() => setIsEditing(!isEditing)}>Edit</button>
           </span>
 
-          <h2>{dispalyReviewDate.toDateString()}</h2>
-          <h3>{review.description}</h3>
+          <p>{review.description}</p>
+          <h3>{dispalyReviewDate.toDateString()}</h3>
           <button onClick={() => handlChangePublish()}>
             {review.publish ? "Unpublish" : "Publish"}
           </button>

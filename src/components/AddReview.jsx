@@ -34,24 +34,17 @@ const AddReview = ({ fetchAllReviews }) => {
   return (
     <>
       <form className={classes["review-form"]} onSubmit={handleSubmit}>
-        {/* <input
-          className={classes["date-input"]}
-          type="date"
-          placeholder="choose a date"
-          value={reviewDate}
-          min={new Date().toISOString().split("T")[0]}
-          onChange={(e) => setReviewDate(e.target.value)}
-        /> */}
-        <input
+        <textarea
           className={classes["description"]}
-          type="text"
+          rows={20}
+          cols={50}
           placeholder="enter your description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
         />
         <button className={classes["add-btn"]} type="submit">
-          Add Review
+          Post Review
         </button>
       </form>
     </>
