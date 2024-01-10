@@ -56,11 +56,7 @@ const AddBooking = ({ fetchAllBookings }) => {
           <option>10:00</option>
           <option>15:00</option>
         </select>
-        {/* <input
-          type="time"
-          value={bookingTime}
-          onChange={(e) => setBookingTime(e.target.value)}
-        /> */}
+
         <select
           value={numberOfPeople}
           onChange={(e) => setNumberOfPeople(e.target.value)}

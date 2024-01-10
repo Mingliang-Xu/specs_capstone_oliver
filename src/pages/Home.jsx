@@ -1,14 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-import { useLoaderData } from "react-router-dom";
+// import { useLoaderData } from "react-router-dom";
 
 import classes from "./Home.module.css";
 
-const Home = () => {
-  const allPublishedReviews = useLoaderData();
+import { viewAllPublishedReviews } from "../App";
 
-  console.log(" rendering home...............");
-  console.log(allPublishedReviews);
+const Home = () => {
+  const [allPublishedReviews, setAllPublishedReviews] = useState([]);
+
+  useEffect(() => {
+    viewAllPublishedReviews().then((data) => {
+      setAllPublishedReviews(data);
+    });
+  }, []);
+
+  // const allPublishedReviews = useLoaderData();
+
+  // console.log(" rendering home...............");
+  // console.log(allPublishedReviews);
 
   return (
     <main className={classes["review-container"]}>

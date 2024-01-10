@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
 import AuthContext from "../store/AuthContext";
 import Auth from "../pages/Auth";
+import Home from "../pages/Home";
 
 import classes from "./Header.module.css";
 
@@ -14,17 +15,13 @@ const Header = () => {
     <header className={classes.header}>
       <ul className={classes["header-nav"]}>
         <li>
-          <NavLink to="/">My Home Page</NavLink>
+          <NavLink to="/">My Home</NavLink>
         </li>
         <li>
-          <NavLink to={`${state.userId ? "bookings" : "/"}`}>
-            Booking Page
-          </NavLink>
+          <NavLink to={`${state.userId ? "bookings" : "/"}`}>Bookings</NavLink>
         </li>
         <li>
-          <NavLink to={`${state.userId ? "reviews" : "/"}`}>
-            Review Page
-          </NavLink>
+          <NavLink to={`${state.userId ? "reviews" : "/"}`}>Reviews</NavLink>
         </li>
         <li>
           {state.userId && (
@@ -45,11 +42,12 @@ const Header = () => {
       <header className={classes.header}>
         <ul className={classes["header-nav"]}>
           <li>
-            <NavLink to="/">Welcome to My Page</NavLink>
+            <NavLink to="/">🌉 Welcome to Golden Gate Cookie Co. 🍪</NavLink>
           </li>
         </ul>
       </header>
-      {!state.userId && <Auth />}
+      <Auth />
+      <Home />
     </>
   );
 };

@@ -26,6 +26,9 @@
   padding: 15px;
   background-color: #a8a29e;
 }
+.description::placeholder {
+  color: #fafaf9;
+}
 
 .add-btn {
   color: #fafaf9;

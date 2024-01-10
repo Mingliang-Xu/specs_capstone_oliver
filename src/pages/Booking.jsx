@@ -1,12 +1,11 @@
 import React, { useState, useContext } from "react";
-import Button from "../components/Button";
-import BookingItem from "./BookingItem";
-
-import AuthContext from "../store/AuthContext";
-import AddBooking from "../components/AddBooking";
-
 import axios from "axios";
 import { useLoaderData } from "react-router-dom";
+
+import AuthContext from "../store/AuthContext";
+
+import BookingItem from "./BookingItem";
+import AddBooking from "../components/AddBooking";
 
 import classes from "./Booking.module.css";
 
@@ -18,8 +17,9 @@ export const viewAllBookings = async () => {
 const Booking = () => {
   const { state } = useContext(AuthContext);
   const [allBookings, setAllBookings] = useState(useLoaderData());
+
   // const allBookings = useLoaderData();
-  console.log(allBookings);
+  // console.log(allBookings);
 
   const fetchAllBookings = () => {
     axios

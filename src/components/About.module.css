@@ -14,5 +14,5 @@
 }
 .intro p::first-letter {
   font-size: 30px;
-  color: #ca8a04;
+  color: red;
 }

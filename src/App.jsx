@@ -16,7 +16,7 @@ import axios from "axios";
 
 import "./App.css";
 
-const viewAllPublishedReviews = async () => {
+export const viewAllPublishedReviews = async () => {
   const response = await axios.get(`/api/reviews`);
   return response.data;
 };
@@ -30,12 +30,16 @@ function App() {
       element: <Root />,
       // loader: viewAllPublishedReviews,
       children: [
-        { index: true, element: <Home />, loader: viewAllPublishedReviews },
+        {
+          index: true,
+          element: state.userId && <Home />,
+          loader: viewAllPublishedReviews,
+        },
         { path: "bookings", element: <Booking />, loader: viewAllBookings },
         { path: "reviews", element: <Review />, loader: viewAllReviews },
         { path: "bookings/:id", element: <BookingItem /> },
-        { path: "checkout/:bookingId", element: state.userId && <Checkout /> },
         { path: "reviews/:id", element: <ReviewItem /> },
+        { path: "checkout/:bookingId", element: state.userId && <Checkout /> },
       ],
     },
   ]);

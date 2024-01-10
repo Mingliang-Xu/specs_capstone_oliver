@@ -21,7 +21,7 @@ module.exports = {
       const { username, password } = req.body;
       let foundUser = await User.findOne({ where: { username } });
       if (foundUser) {
-        res.status(400).send("User already exists");
+        res.status(400).send("User already exists!");
       } else {
         const salt = bcrypt.genSaltSync(10);
         const hash = bcrypt.hashSync(password, salt);
@@ -37,7 +37,9 @@ module.exports = {
       }
     } catch (error) {
       console.log(error);
-      res.status(500).send("Something went wrong registering");
+      res
+        .status(500)
+        .send("Something went wrong registering. Try again later!");
     }
   },
   login: async (req, res) => {
@@ -45,14 +47,14 @@ module.exports = {
       const { username, password } = req.body;
       let foundUser = await User.findOne({ where: { username } });
       if (!foundUser) {
-        res.status(400).send("User not found, please register first");
+        res.status(400).send("User not found, please register first!");
       } else {
         const isAuthenticated = bcrypt.compareSync(
           password,
           foundUser.hashedPass
         );
         if (!isAuthenticated) {
-          res.status(401).send("Please enter the correct password");
+          res.status(401).send("Please enter the correct password!");
         } else {
           const token = createToken(foundUser.username, foundUser.id);
           const exp = Date.now() + 1000 * 360 * 48;
@@ -66,7 +68,7 @@ module.exports = {
       }
     } catch (error) {
       console.log(error);
-      res.status(500).send("Something went wrong logging in");
+      res.status(500).send("Something went wrong logging in. Try again!");
     }
   },
 };

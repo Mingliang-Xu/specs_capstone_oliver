@@ -7,18 +7,16 @@ const About = () => {
     <section className={classes.intro}>
       <h2>About</h2>
       <p>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Nisl nisi
-        scelerisque eu ultrices. Sollicitudin nibh sit amet commodo nulla
-        facilisi nullam vehicula ipsum. Mauris pharetra et ultrices neque ornare
-        aenean. Ut venenatis tellus in metus vulputate eu scelerisque felis.
-        Proin fermentum leo vel orci. Varius morbi enim nunc faucibus a
-        pellentesque sit. Nibh nisl condimentum id venenatis a condimentum vitae
-        sapien. Eget arcu dictum varius duis at consectetur lorem. Molestie nunc
-        non blandit massa. Pulvinar elementum integer enim neque volutpat ac.
-        Quis eleifend quam adipiscing vitae proin sagittis. Consequat mauris
-        nunc congue nisi vitae suscipit tellus mauris a. Fermentum iaculis eu
-        non diam phasellus.
+        Step into the delectable world of chocolate just a stone's throw away
+        from the iconic Golden Gate Park at Golden Gate Cookie Co. Our exclusive
+        Chocolate Cookie Baking Experience class, located in the heart of San
+        Francisco, is designed for everyone, emphasizing the joy and camaraderie
+        of crafting sumptuous chocolate cookies. Led by our 3rd generation
+        baker, the hands-on Chocolate Cookie Baking Experience unfolds in the
+        cozy warmth of the instructor's home, offering a unique opportunity to
+        master the art of ingredient selection and expert techniques. Join us
+        for an unforgettable culinary adventure at Golden Gate Cookie Co, where
+        the joy of creating delicious treats takes center stage.
       </p>
     </section>
   );
